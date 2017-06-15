@@ -17,7 +17,14 @@ type Player struct {
 	GameId int
 }
 
+func NewPlayer(id int, name, location string, gameid int) *Player {
+	return &Player{
+		User:   &User{id, name, location},
+		GameId: gameid,
+	}
+}
+
 func main() {
-	p := &Player{}
-	fmt.Println(*p.Greetings{})
+	p := NewPlayer(34, "Espen", "Tønsberg", 3127)
+	fmt.Println(p.Greetings())
 }
