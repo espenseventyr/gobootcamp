@@ -21,26 +21,30 @@ func main() {
 			switch char {
 			case 'A', 'a':
 				distribution[user]++
+				coins--
 			case 'E', 'e':
 				distribution[user]++
+				coins--
 			case 'I', 'i':
 				distribution[user] += 2
+				coins -= 2
 			case 'O', 'o':
 				distribution[user] += 3
+				coins -= 3
 			case 'U', 'u':
 				distribution[user] += 4
-
-				/*			for _, vowel := range vowels {
-							//				fmt.Printf("index:%v\nuser:%v\nchar:%v\nvowel:%v\n", index, user, char, vowel)
-							// For each vowel equals 1 coin
-								if char == vowel {
-								distribution[user]++
-								coins--
-							}
-						}*/
+				coins -= 4
 			}
 		}
 	}
+
+	for _, user := range users {
+		if distribution[user] > 10 {
+			coins += (distribution[user] - 10)
+			distribution[user] = 10
+		}
+	}
+
 	fmt.Println(distribution)
 	fmt.Println("Coins left:", coins)
 

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"code.google.com/p/go-tour/wc"
+	"golang.org/x/tour/wc"
 	"strings"
 )
 
@@ -10,6 +10,7 @@ func WordCount(s string) map[string]int {
 	count := map[string]int{}
 	for _, word := range words {
 		count[word]++
+	}
 	return count
 }
 
