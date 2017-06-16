@@ -11,7 +11,6 @@ var (
 		"Matthew", "Sarah", "Augustus", "Heidi", "Emilie",
 		"Peter", "Giana", "Adriano", "Aaron", "Elizabeth",
 	}
-	vowels       = [10]rune{'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'}
 	distribution = make(map[string]int, len(users))
 )
 
